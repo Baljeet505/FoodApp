@@ -1,0 +1,22 @@
+{% extends "food/base.html" %}
+
+{% block body %}
+{% for recipe in list %}
+<div class="container-fluid" style="margin: 50px 0 0 0;">
+  <div class="row">
+    <div class="col-md-3 offset-md-2">
+      <img src="{{recipe.recipe_img}}" height="300px" width="300px">
+    </div>
+    <div class="col-md-4">
+      <h3 class="card-title">{{recipe.recipe_name}}</h3>
+      <div class="article">
+        <p>
+          {{ recipe.recipe_desc|slice:":200" }}{% if recipe.recipe_desc|length > 200 %}... <a href="{% url 'FoodApp:detail' recipe.id %}" id="read-more">Read More</a>{% endif %}
+        </p>
+      </div>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+</div>
+{% endfor %}
+{% endblock %}

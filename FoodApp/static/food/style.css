@@ -1,0 +1,11 @@
+.container-fluid{
+    border-radius: 16px;
+    padding: 0;
+}
+img{
+    border-radius: 16px;
+}
+.custom-navbar .navbar-nav {
+    margin-left: auto; /* This will push the navbar to the right */
+  }
+
